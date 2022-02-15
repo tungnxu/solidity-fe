@@ -86,13 +86,13 @@ export default function Pool({ masterChef, poolId }: { masterChef: Contract, poo
                         <div className="level-item has-text-centered mr-5 pr-5">
                             <div>
                                 <p className="heading has-text-grey">Deposited</p>
-                                <p className="title is-4">{ethers.utils.formatEther(userInfo?.amount)?.toString()}</p>
+                                <p className="title is-4">{userInfo?.amount && ethers.utils.formatEther(userInfo?.amount)?.toString()}</p>
                             </div>
                         </div>
                         <div className="level-item has-text-centered mr-5 pr-5">
                             <div>
                                 <p className="heading has-text-grey">Rewards per block</p>
-                                <p className="title is-4">{ethers.utils.formatEther(poolInfo?.allocPoint)?.toString()} DOGG</p>
+                                <p className="title is-4">{poolInfo?.allocPoint &&   ethers.utils.formatEther(poolInfo?.allocPoint)?.toString()} DOGG</p>
                             </div>
                         </div>
 
@@ -127,7 +127,7 @@ export default function Pool({ masterChef, poolId }: { masterChef: Contract, poo
                         </div>
                         <div className="has-text-left ml-3">
                             <small className="has-text-grey">BALANCE</small>
-                            <h3 onClick={() => { setInputValue(lpBalance) }} className="title is-5"> {ethers.utils.formatEther(lpBalance)?.toString()} SLP-{getLabelToken(poolId)}  </h3>
+                            <h3 onClick={() => { setInputValue(lpBalance) }} className="title is-5"> {lpBalance && ethers.utils.formatEther(lpBalance)?.toString()} SLP-{getLabelToken(poolId)}  </h3>
                         </div>
 
                     </div>
@@ -146,13 +146,13 @@ export default function Pool({ masterChef, poolId }: { masterChef: Contract, poo
                         </div>
                         <div className="has-text-left ml-3">
                             <small className="has-text-grey">DEPOSTED:</small>
-                            <h3 onClick={() => { setWithdrawValue(userInfo?.amount) }} className="title is-5"> {ethers.utils.formatEther(userInfo?.amount)?.toString()}  SLP-{getLabelToken(poolId)}  </h3>
+                            <h3 onClick={() => { setWithdrawValue(userInfo?.amount) }} className="title is-5"> {userInfo?.amount && ethers.utils.formatEther(userInfo?.amount)?.toString()}  SLP-{getLabelToken(poolId)}  </h3>
                         </div>
                     </div>
                     <div className="column has-background-success-light">
                         <div className="has-text-centered pl-5">
                             <small className="has-text-grey">REWARDs</small>
-                            <h3 className="title is-5"> {ethers.utils.formatEther(pendingSushi)?.toString()} DOGG </h3>
+                            <h3 className="title is-5"> {pendingSushi && ethers.utils.formatEther(pendingSushi)?.toString()} DOGG </h3>
                             <button onClick={claim} className="button is-success">Claim rewards</button>
                         </div>
                     </div>

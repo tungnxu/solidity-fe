@@ -83,7 +83,7 @@ export default function Vault({ vault }: { vault: Contract }) {
                         <div className="level-item has-text-centered mr-5 pr-5">
                             <div>
                                 <p className="heading has-text-grey">Deposited</p>
-                                <p className="title is-4">{ethers.utils.formatEther(balanceInFarm).toString()}</p>
+                                <p className="title is-4">{balanceInFarm && ethers.utils.formatEther(balanceInFarm)?.toString()}</p>
                             </div>
                         </div>
                     
@@ -119,7 +119,7 @@ export default function Vault({ vault }: { vault: Contract }) {
                         </div>
                         <div className="has-text-left ml-3">
                             <small className="has-text-grey">BALANCE</small>
-                            <h3 onClick={() => { setInputValue(lpBalance) }} className="title is-5"> {ethers.utils.formatEther(lpBalance)?.toString()} SLP-ETH/DOGG </h3>
+                            <h3 onClick={() => { setInputValue(lpBalance) }} className="title is-5"> {lpBalance && ethers.utils.formatEther(lpBalance)?.toString()} SLP-ETH/DOGG </h3>
                         </div>
 
                     </div>
@@ -138,7 +138,7 @@ export default function Vault({ vault }: { vault: Contract }) {
                         </div>
                         <div className="has-text-left ml-3">
                             <small className="has-text-grey">DEPOSTED:</small>
-                            <h3 onClick={() => { setWithdrawValue(balanceInFarm) }} className="title is-5"> {ethers.utils.formatEther(balanceInFarm).toString()}  SLP-ETH/DOGG </h3>
+                            <h3 onClick={() => { setWithdrawValue(balanceInFarm) }} className="title is-5"> {balanceInFarm && ethers.utils.formatEther(balanceInFarm).toString()}  SLP-ETH/DOGG </h3>
                         </div>
                     </div>
                     <div className="column has-background-success-light">
