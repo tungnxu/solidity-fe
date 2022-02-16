@@ -7,9 +7,9 @@ import useSigner from './useSigner';
 
 export default function useContract(name: string, abi?: any) {
     const _abi = Contracts[name].abi
-    const { chainId } = useWeb3React();
+    const { chainId, library } = useWeb3React();
 
-    const signer = useSigner()
+    // const signer = useSigner()
 
     const _contractAddress = useMemo(() => {
         if (!chainId) return
@@ -20,6 +20,6 @@ export default function useContract(name: string, abi?: any) {
 
     return useMemo(() => {
         if (!_contractAddress) return
-        return new ethers.Contract(_contractAddress, abi || _abi, signer)
-    }, [signer, _contractAddress, _abi, abi])
+        return new ethers.Contract(_contractAddress, abi || _abi).connect(library)
+    }, [library, _contractAddress, _abi, abi])
 }

@@ -58,7 +58,7 @@ export default function Pool({ masterChef, poolId }: { masterChef: Contract, poo
     }, [masterChef, poolId, blockNumber]);
 
     const getLabelToken = (pool: number) =>{
-        return pool == 0 ? " ETH/DOGG": " USDC/DOGG"
+        return pool == 0 ? " MATIC/DOGG": " USDC/DOGG"
     }
 
     const deposit = useCallback(() => {

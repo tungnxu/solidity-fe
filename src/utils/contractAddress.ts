@@ -1,6 +1,7 @@
 export enum ChainId {
     Mumbai= 80001,
     Kovan= 42,
+    Polygon = 137
 }
 
 const contractAddress: { [any: number]: { [any: string]: string } } = {
@@ -15,6 +16,11 @@ const contractAddress: { [any: number]: { [any: string]: string } } = {
         "DoggToken": "0xCF887dBdfC5b1239D24713C8D789Ea795B261f14",
         "MasterChef": "0x6127233E3FD41Ce8BD1532E9975fa4ef356a693C",
         "Vault": "0xe97aE6aa402a2456E4c12018CeAcAfEc4b21dDC1"
+    },
+    [ChainId.Polygon]: {
+        "DoggToken": "0x3440916Ef90b3aE444a6e0b7EADA23f641965e43",
+        "MasterChef": "0x2849B232Dc49b43CdEc8a9c33117bEC8Ee5fe867",
+        "Vault": "0x39c94fAcF2d4e39232619eF51d2217e4959f7340"
     }
 }
 

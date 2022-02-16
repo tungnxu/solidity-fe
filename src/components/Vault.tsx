@@ -78,7 +78,7 @@ export default function Vault({ vault }: { vault: Contract }) {
         <div className="pool-list">
             <article className="pool panel is-warning">
                 <div className="panel-heading is-flex is-justify-content-space-between is-4 title m-0">
-                    #{1} - ETH/DOGG
+                    #{1} - MATIC/DOGG
                     <nav className="level">
                         <div className="level-item has-text-centered mr-5 pr-5">
                             <div>
@@ -119,7 +119,7 @@ export default function Vault({ vault }: { vault: Contract }) {
                         </div>
                         <div className="has-text-left ml-3">
                             <small className="has-text-grey">BALANCE</small>
-                            <h3 onClick={() => { setInputValue(lpBalance) }} className="title is-5"> {lpBalance && ethers.utils.formatEther(lpBalance)?.toString()} SLP-ETH/DOGG </h3>
+                            <h3 onClick={() => { setInputValue(lpBalance) }} className="title is-5"> {lpBalance && ethers.utils.formatEther(lpBalance)?.toString()} SLP-MATIC/DOGG </h3>
                         </div>
 
                     </div>
@@ -138,7 +138,7 @@ export default function Vault({ vault }: { vault: Contract }) {
                         </div>
                         <div className="has-text-left ml-3">
                             <small className="has-text-grey">DEPOSTED:</small>
-                            <h3 onClick={() => { setWithdrawValue(balanceInFarm) }} className="title is-5"> {balanceInFarm && ethers.utils.formatEther(balanceInFarm).toString()}  SLP-ETH/DOGG </h3>
+                            <h3 onClick={() => { setWithdrawValue(balanceInFarm) }} className="title is-5"> {balanceInFarm && ethers.utils.formatEther(balanceInFarm).toString()}  SLP-MATIC/DOGG </h3>
                         </div>
                     </div>
                     <div className="column has-background-success-light">

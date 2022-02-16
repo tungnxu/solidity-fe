@@ -8,8 +8,8 @@ import useProvider from '../hooks/useProvider';
 import { updateBlockNumber, updateBlockTimestamp, updateChainId } from './application/actions';
 
 export default function ApplicationUpdater(): null {
-    const { chainId } = useWeb3React();
-    const library = useProvider();
+    const { chainId, library } = useWeb3React();
+    // const library = useProvider();
     const windowVisible = useIsWindowVisible()
     const dispatch = useDispatch()
   
@@ -60,7 +60,7 @@ export default function ApplicationUpdater(): null {
       library
         .getBlock('latest')
         .then(blockCallback)
-        .catch((error) => console.error(`Failed to get block for chainId: ${chainId}`, error))
+        .catch((error: any) => console.error(`Failed to get block for chainId: ${chainId}`, error))
   
       library.on('block', onBlock)
       return () => {
